@@ -1,4 +1,4 @@
-<h1> BBDrails <h1>
+<h1> BBDrails </h1>
 
 <p> Projet réaliser par Guillaume Delory (@Guillaume) et Pierre Ampuero (@ampueropierre)</p>
 
