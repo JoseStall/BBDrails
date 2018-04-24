@@ -1,20 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+#gem faker qui permet de générer différentes données
 require 'faker'
 
 10.times do
+	#Cette requete va créer 10 utilisateurs dans la table Users
 	user = User.create(
 		name: Faker::ProgrammingLanguage.name
 	)
+	#Cette requete va créer 10 pins dans la table Pins
 	user.pins.create(
 		url: Faker::Hipster.paragraph
 	)
+	#Cette requete va créer 10 commentaire dans la table Comments
 	user.comments.create(
 		comment: Faker::Hipster.paragraph, pin_id: Pin.pluck(:id).sample
 	)

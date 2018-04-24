@@ -1,17 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+#gem faker qui permet de générer différentes données
 require 'faker'
 
 10.times do
+	#Cette requete va créer 10 cours dans la table Courses
 	course = Course.create(
 		title: Faker::ProgrammingLanguage.name, description: Faker::ProgrammingLanguage.creator
 	)
+	#Cette requete va créer 10 Leçons pour chaque cours dans la table Lessons donc 10*10 = 100 leçons 
 	10.times do
 		course.lesson.create(
 			title: Faker::ProgrammingLanguage.name, body: Faker::Hipster.paragraph
